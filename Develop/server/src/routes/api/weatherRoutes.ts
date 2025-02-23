@@ -20,7 +20,7 @@ router.post('/', async (req: Request, res: Response) => {
   // TODO: GET weather data from city name
   let weatherData = await WeatherService.getWeatherForCity(req.body.cityName);
   // TODO: save city to search history
-  // await HistoryService.addCity(req.body.cityName);
+   await HistoryService.addCity(req.body.cityName);
 
 
   res.json(weatherData);
@@ -33,8 +33,8 @@ router.get('/history', async (req: Request, res: Response) => {
   res.status(200).json({ message: 'Search history retrieved' });
 
   // use HistoryService to get search history
-  // const history = await HistoryService.getCities();
-  // res.json(history);
+  const history = await HistoryService.getCities();
+   res.json(history);
 });
 
 // * BONUS TODO: DELETE city from search history
