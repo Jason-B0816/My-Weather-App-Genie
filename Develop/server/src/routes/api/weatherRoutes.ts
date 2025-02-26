@@ -16,24 +16,26 @@ import HistoryService from '../../service/historyService.js';
 
 // TODO: POST Request with city name to retrieve weather data
 router.post('/', async (req: Request, res: Response) => {
-  console.log(req.body);
+try{  console.log(req.body);
   // TODO: GET weather data from city name
   let weatherData = await WeatherService.getWeatherForCity(req.body.cityName);
   // TODO: save city to search history
    await HistoryService.addCity(req.body.cityName);
 
 
-  res.json(weatherData);
+  res.json(weatherData);}
+  catch(err){
+    res.status(500).json(err)
+  }
 });
 
 // TODO: GET search history
-router.get('/history', async (req: Request, res: Response) => {
-  console.log(req.body);
-  // Placeholder response for search history
-  res.status(200).json({ message: 'Search history retrieved' });
+router.get('/history', async (_req: Request, res: Response) => {
+  
+
 
   // use HistoryService to get search history
-  const history = await HistoryService.getCities();
+   const history = await HistoryService.getCities();
    res.json(history);
 });
 

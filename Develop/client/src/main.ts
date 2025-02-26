@@ -34,6 +34,8 @@ API Calls
 
 */
 
+
+
 const fetchWeather = async (cityName: string) => {
   const response = await fetch('/api/weather/', {
     method: 'POST',
@@ -45,14 +47,14 @@ const fetchWeather = async (cityName: string) => {
 
   const weatherData = await response.json();
 
-  console.log('weatherData: ', weatherData);
+    console.log('weatherData: ', weatherData);
 
-  renderCurrentWeather(weatherData[0]);
-  renderForecast(weatherData.slice(1));
+        renderCurrentWeather(weatherData[0]);
+      renderForecast(weatherData.slice(1));
 };
 
 const fetchSearchHistory = async () => {
-  const history = await fetch('/api/weather/history', {
+  const history = await fetch('/api/weather/history', { 
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -235,6 +237,7 @@ const createHistoryDiv = () => {
 };
 
 const buildHistoryListItem = (city: any) => {
+  console.log('city: ', city);
   const newBtn = createHistoryButton(city.name);
   const deleteBtn = createDeleteButton();
   deleteBtn.dataset.city = JSON.stringify(city);
