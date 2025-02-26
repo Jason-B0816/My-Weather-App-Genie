@@ -59,8 +59,8 @@ npm run start:dev
 
 **Email:**  jbrooks20008@gmail.com
 
-**GitHub:**  https://github.com/Jason-B0816
+**GitHub UserName:**  https://github.com/Jason-B0816
 
 **GitHub Repository:**  https://github.com/Jason-B0816/My-Weather-App-Genie
 
-**Website:**  https://MyWeatherAppGenie.com
+**Website on Render:**  https://my-weather-app-genie.onrender.com/
